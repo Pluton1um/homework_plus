@@ -1,0 +1,12 @@
+body {
+    font-family: 'Microsoft YaHei';
+    margin: 0px;
+    padding: 0px;
+    min-width: 1200px;
+    min-height: 500px;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+    margin: 0px;
+    padding: 0px;
+}

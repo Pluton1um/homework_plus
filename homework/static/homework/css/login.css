@@ -1,0 +1,262 @@
+body {
+    font-family: "Microsoft YaHei";
+    background-color: #27837E;
+    width: 100%;
+    height: 100%;
+    min-height: 550px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+P,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+label {
+    margin: 0px;
+}
+
+input {
+    font-family: "Microsoft YaHei";
+    color: rgb(19, 66, 64);
+    transition: all 300ms ease-in-out;
+}
+
+input::-webkit-input-placeholder,
+input::-moz-placeholder,
+input:-moz-placeholder,
+input:-ms-input-placeholder {
+    color: red;
+    font-family: "Microsoft YaHei";
+}
+
+input:-internal-autofill-previewed,
+input:-internal-autofill-selected {
+    -webkit-text-fill-color: rgb(19, 66, 64) !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+input:focus {
+    outline: none;
+    background-color: transparent;
+    /* box-shadow: -5px 0 10px -8px rgb(19, 66, 64) inset; */
+    /* -2px 0 5px rgb(19, 66, 64) inset, ; */
+    box-shadow: 0 5px 10px -7px rgb(19, 66, 64);
+}
+
+#target {
+    position: absolute;
+    z-index: -1;
+}
+
+.login-panel {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: rgb(39, 131, 126);
+    /* border-radius: 20px; */
+    width: 450px;
+    min-width: 450px;
+    height: 400px;
+    min-height: 400px;
+    /* text-align: center; */
+}
+
+.nav-bar,
+.nav,
+.tab-content,
+.login-bottom {
+    width: 100%;
+}
+
+.tab-content {
+    height: 60%;
+}
+
+.nav-link {
+    border-bottom: 2px solid white;
+    color: rgb(39, 131, 126);
+    transition: all 100ms ease-in-out;
+}
+
+.nav-link:hover {
+    color: rgb(19, 66, 64);
+}
+
+.nav-active {
+    border-bottom: 2px solid rgb(39, 131, 126);
+}
+
+#school-id,
+#phone-num,
+.school-form,
+.phone-form {
+    height: 100%;
+    width: 100%;
+}
+
+.column-center {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.row-center {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.school-form {
+    justify-content: space-between;
+}
+
+.login-row-box {
+    height: 35px;
+    width: 80%;
+}
+
+.login-row {
+    border: none;
+    border-bottom: 1px solid rgb(39, 131, 126);
+    /* box-shadow: 0 0 0 50px rgba(255, 255, 255, 0.5) inset; */
+    /* border-radius: 10px; */
+    background-color: transparent;
+    height: 35px;
+    width: 100%;
+    padding: 5px 15px;
+    text-align: left;
+}
+
+.arrow-l {
+    width: 90%;
+}
+
+.arrow-r {
+    height: 35px;
+    width: 10%;
+    border-bottom: 1px solid rgb(39, 131, 126);
+}
+
+.arrow-img {
+    /* border-radius: 100px; */
+    padding: 3px;
+    margin: 5px;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.rotate-0 {
+    transform: rotate(0deg);
+}
+
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
+.dropdown-list {
+    position: absolute;
+    transform: translateY(50px);
+    background-color: white;
+    /* width: fit-content; */
+    width: 450px;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 300ms ease-in-out;
+}
+
+.dropdown-single {
+    width: fit-content;
+    height: fit-content;
+    line-height: 14px;
+    padding: 10px 15px;
+    cursor: pointer;
+    color: rgb(39, 131, 126);
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.dropdown-single:hover {
+    background-color: rgba(39, 131, 126, 0.7);
+    color: white;
+}
+
+.identity-option {
+    border: none;
+    background-color: transparent;
+    height: 35px;
+    width: 50%;
+    padding: 5px 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.identity-option:hover {
+    background-color: rgba(39, 131, 126, 0.7);
+    color: white;
+}
+
+.high-light {
+    background-color: rgba(39, 131, 126, 0.7);
+    color: white;
+}
+
+.login-btn {
+    background-color: transparent;
+    border: 1px solid rgb(39, 131, 126);
+    color: rgb(39, 131, 126);
+    /* border-radius: 10px; */
+    width: 80%;
+    height: 35px;
+    /* text-align: center; */
+    padding: 5px 15px;
+    transition: all 300ms ease-in-out;
+}
+
+.test-code-l {
+    width: 70%;
+}
+
+.test-code-r {
+    border: 1px solid rgb(39, 131, 126);
+    height: 35px;
+    width: 30%;
+    cursor: pointer;
+    text-align: center;
+    line-height: 35px;
+    transition: all 300ms ease-in-out;
+}
+
+.login-btn:hover,
+.test-code-r:hover {
+    background-color: rgba(39, 131, 126, 0.7);
+    color: white;
+}
+
+.bottom-btn {
+    cursor: pointer;
+}
+
+.bottom-btn:hover {
+    color: rgb(19, 66, 64);
+}

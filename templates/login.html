@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Welcome!</title>
+    <!--link-->
+    <link rel="shortcut icon" href="{% static 'homework/materials/icons/favicon.ico' %}" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'homework/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'homework/css/login.css' %}">
+</head>
+
+<body>
+
+    <!-- <div style="text-align:center;clear:both;">
+        <script src="/gg_bd_ad_720x90.js"></script>
+        <script src="/follow.js"></script>
+    </div> -->
+
+    <canvas id="target"></canvas>
+
+    <div class="login-panel column-center">
+
+        <!--start navigation bar-->
+        <div class="nav-bar row-center">
+            <ul class="nav nav-justified">
+                <li class="nav-item">
+                    <a class="nav-link nav-active" data-toggle="tab" href="#school-id">学籍登录</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#phone-num">手机登录</a>
+                </li>
+            </ul>
+        </div>
+        <!--start navigation bar-->
+
+        <!--start student id login-->
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="school-id">
+                <form class="school-form column-center" action="" method="post">
+                    <div class="login-row-box row-center">
+                        <input class="login-row arrow-l" type="text" placeholder="学校选择">
+                        <div class="arrow-r row-center">
+                            <img class="arrow-img rotate-0" src="{% static 'homework/materials/icons/arrow.png' %}" alt="pull">
+                        </div>
+                        <div class="dropdown-list" style="display: none;">
+                            <!--start 这里返回后端学校数据，并在点击后返回到后端用来登录选择信息-->
+                            <label class="dropdown-single">北京邮电大学
+                                <input type="radio" name="school" value="BUPT" style="display: none;">
+                            </label>
+                            <label class="dropdown-single">北京交通大学
+                                <input type="radio" name="school" value="A" style="display: none;">
+                            </label>
+                            <label class="dropdown-single">北京师范大学
+                                <input type="radio" name="school" value="C" style="display: none;">
+                            </label>
+                            <label class="dropdown-single">中央财经大学
+                                <input type="radio" name="school" value="D" style="display: none;">
+                            </label>
+                            <label class="dropdown-single">北京航空航天大学
+                                <input type="radio" name="school" value="E" style="display: none;">
+                            </label>
+                            <!--end 这里返回后端学校数据，并在点击后返回到后端用来登录选择信息-->
+                        </div>
+                    </div>
+                    <div class="login-row-box">
+                        <input class="login-row" name="username" type="text" placeholder="用户名" required>
+                    </div>
+                    <div class="login-row-box">
+                        <input class="login-row" name="password" type="password" placeholder="密码" required>
+                    </div>
+                    <div class="login-row-box row-center">
+                        <label class="identity-option teacher">教 师
+                            <input type="radio" name="identity" value="teacher" style="display: none;">
+                        </label>
+                        <label class="identity-option student">学 生
+                            <input type="radio" name="identity" value="student" style="display: none;">
+                        </label>
+                    </div>
+                    <p class="login-hint">&nbsp;</p>
+                    <input class="login-btn" name="login" type="submit" value="登陆">
+                    <div>{{ res }}</div>
+                </form>
+            </div>
+            <!--end student id login-->
+
+            <!--start phone number&code login-->
+            <div class="tab-pane fade" id="phone-num">
+                <form class="phone-form column-center">
+                    <div class="login-row-box">
+                        <input class="login-row" name="phone" type="text" placeholder="手机号" required>
+                    </div>
+                    <div class="login-row-box row-center">
+                        <input class="login-row test-code-l" name="code" type="password" placeholder="验证码" required>
+                        <div class="test-code-r">获取验证码</div>
+                    </div>
+                    <p class="login-hint">&nbsp;</p>
+                    <input class="login-btn" name="login" type="button" value="登陆">
+                </form>
+            </div>
+            <!--end  phone number&code login-->
+        </div>
+
+        <!--start bottom options-->
+        <div class="row-center">
+            <span class="bottom-btn" id="reg">注册</span>
+            <span style="margin: 0 5px;"><b>|</b></span>
+            <span class="bottom-btn">忘记密码?</span>
+        </div>
+        <!--end bottom options-->
+
+    </div>
+
+    <!--script-->
+    <script src="{% static 'homework/js/jquery-3.4.1.js' %}"></script>
+    <script src="{% static 'homework/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'homework/js/easeljs.js' %}"></script>
+    <script src="{% static 'homework/js/script.js' %}"></script>
+    <script src="{% static 'homework/js/login.js' %}"></script>
+</body>
+
+</html>
