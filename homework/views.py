@@ -37,4 +37,4 @@ def login(request):
 
 
 def account(request):
-    return render(request, 'account.html')
+    return render(request, 'account-student.html')

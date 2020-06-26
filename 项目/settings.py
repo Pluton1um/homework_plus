@@ -78,9 +78,11 @@ WSGI_APPLICATION = '项目.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_test',
+        # 'NAME': 'django_test',
+        'NAME': 'homework_plus',
         'USER': 'root',
-        'PASSWORD': '123456',
+        # 'PASSWORD': '123456',
+        'PASSWORD': '20190131Fan',
         'HOST': 'localhost',
         'PORT': '3306'
     }
