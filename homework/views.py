@@ -41,3 +41,6 @@ def accountStudent(request):
 
 def accountTeacher(request):
     return render(request, 'account-teacher.html')
+
+def accountTest(request):
+    return render(request, 'account-test.html')

@@ -21,4 +21,5 @@ urlpatterns = [
     path('', views.login),
     path('account-student', views.accountStudent),
     path('account-teacher', views.accountTeacher),
+    path('account-test', views.accountTest),
 ]
