@@ -77,6 +77,7 @@ class assigment(models.Model):
 # 学生提交的作业及相关信息
 class homework(models.Model):
     id = models.AutoField(primary_key=True)
+    imagepath = models.CharField(max_length=254, null=True)
     submit_time = models.DateTimeField(null=True)  # 提交时间
     whether_submit = models.BooleanField(null=True)  # 作业是否提交
     whether_correct = models.BooleanField(default=False)  # 作业是否被老师批改
@@ -87,8 +88,8 @@ class homework(models.Model):
     student = models.ForeignKey("student", on_delete=models.CASCADE)
 
 
-class photo(models.Model):
-    id = models.AutoField(primary_key=True)
-    photo = models.ImageField()  # 作业照片
-
-    homework = models.ForeignKey("homework", on_delete=models.CASCADE)
+# class photo(models.Model):
+#     id = models.AutoField(primary_key=True)
+#     photo = models.ImageField()  # 作业照片
+#
+#     homework = models.ForeignKey("homework", on_delete=models.CASCADE)
