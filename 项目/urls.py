@@ -19,5 +19,6 @@ from homework import views
 
 urlpatterns = [
     path('', views.login),
-    path('account', views.account),
+    path('account-student', views.accountStudent),
+    path('account-teacher', views.accountTeacher),
 ]

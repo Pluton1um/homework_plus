@@ -36,5 +36,8 @@ def login(request):
         return render(request, 'login.html', context={"res": res})
 
 
-def account(request):
+def accountStudent(request):
     return render(request, 'account-student.html')
+
+def accountTeacher(request):
+    return render(request, 'account-teacher.html')
