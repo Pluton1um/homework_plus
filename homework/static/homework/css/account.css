@@ -120,7 +120,7 @@ body {
 
 .main-nav-fix {
     position: fixed;
-    top: 0px;
+    top: 0;
     min-width: 1200px;
 }
 
@@ -149,18 +149,18 @@ body {
     color: white;
 }
 
-.tab-content {
-    position: relative;
-    z-index: -10;
-}
+/*.tab-content {*/
+/*    position: relative;*/
+/*    z-index: 990;*/
+/*}*/
 
-.tab-pane {
-    margin: 0px;
-}
+/*.tab-pane {*/
+/*    margin: 0px;*/
+/*}*/
 
-#choice4 {
-    border-radius: 0 0 5px 5px;
-}
+/*#choice4 {*/
+/*    border-radius: 0 0 5px 5px;*/
+/*}*/
 
 /*footer*/
 .footer-box {
@@ -184,3 +184,17 @@ body {
     width: 50px;
     height: 50px;
 }
+
+/*.navigation-b {*/
+/*    width: 100%;*/
+/*}*/
+
+/*.navigation-nav-c {*/
+/*    width: 50%;*/
+/*    float: left;*/
+/*}*/
+
+/*.navigation-btn-c {*/
+/*    width: 30%;*/
+/*    float: right;*/
+/*}*/

@@ -45,7 +45,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1593139464249</updated>
-      <workItem from="1593139465396" duration="25238000" />
+      <workItem from="1593139465396" duration="26462000" />
+      <workItem from="1593214839992" duration="10465000" />
     </task>
     <servers />
   </component>
@@ -53,9 +54,17 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593232870875">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.689@0.0.1280.689" timestamp="1593232870875" />
     <state x="740" y="103" key="FileChooserDialogImpl" timestamp="1593139462324">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="740" y="103" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1593139462324" />
+    <state x="325" y="169" key="com.intellij.ide.util.TipDialog" timestamp="1593214868723">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="325" y="169" key="com.intellij.ide.util.TipDialog/0.0.1280.689@0.0.1280.689" timestamp="1593214868723" />
   </component>
 </project>

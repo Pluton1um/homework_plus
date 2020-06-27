@@ -34,7 +34,7 @@
 
 .single-info-content {
     padding: 5px 20px;
-    border: 1px solid black;
+    border: 1px solid gray;
     color: #484848;
     background-color: white;
     width: 100%;
@@ -48,8 +48,8 @@
 }
 
 .single-info-content:hover {
-    background-color: #17a2b8;
-    color: white;
+    background-color: #f3f3f3;
+    /*color: white;*/
 }
 
 .single-button-div {

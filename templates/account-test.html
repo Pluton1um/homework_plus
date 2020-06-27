@@ -8,148 +8,145 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Account</title>
     <!--css-->
-    <link rel="shortcut icon" href="{% static 'homework/materials/icons/favicon.ico' %}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{% static 'homework/materials/icons/favicon.ico' %}" type="image/x-icon"/>
     <link rel="stylesheet" href="{% static 'homework/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'homework/css/for-all.css' %}">
     <link rel="stylesheet" href="{% static 'homework/css/account.css' %}">
 </head>
 
 <body class="container-fluid">
-    <!--head start-->
-    <header class="row top">
-        <div class="background-a">
-            <img id="background-img" src="{% static 'homework/materials/images/lb1.png' %}" title="click to change background">
+<!--head start-->
+<header class="row top">
+    <div class="background-a">
+        <img id="background-img" src="{% static 'homework/materials/images/lb1.png' %}"
+             title="click to change background">
+    </div>
+    <img id="user-img" src="{% static 'homework/materials/user/icebear.jpg' %}" title="click to change user image">
+    <!--profile start-->
+    <div class="user-a">
+        <div class="user-info-b">
+            <h2 id="text-name">name</h2>
+            <h5 id="text-info">
+                <span>city</span>
+                <apan>school</apan>
+            </h5>
         </div>
-        <img id="user-img" src="{% static 'homework/materials/user/icebear.jpg' %}" title="click to change user image">
-        <!--profile start-->
-        <div class="user-a">
-            <div class="user-info-b">
-                <h2 id="text-name">name</h2>
-                <h5 id="text-info">
-                    <span>city</span>
-                    <apan>school</apan>
-                </h5>
-            </div>
-            <div class="user-intro-b">
-                <h6 id="text-intro">
-                    introduction here.introduction here.
-                    introduction here.introduction here.
-                    introduction here.introduction here.
-                    introduction here.introduction here.
-                    introduction here.introduction here.
-                </h6>
-            </div>
-        </div>
-        <!--profile end-->
-    </header>
-    <!--head end-->
-
-    <!--navigation start-->
-    <div class="row">
-        <!--substitute of navigation-a to realize the smooth transition of sticky-top navigationg-->
-        <div class="replacement"></div>
-        <div class="navigation-a">
-            <div class="navigation-b col-10 offset-1">
-                <div class="row">
-                    <!--left navigation bar start-->
-                    <div class="navigation-nav-c col-6">
-                        <ul class="nav nav-justified main-nav">
-                            <li class="nav-item">
-                                <a class="main-nav-a nav-link active main-nav-active" id="nav-info" data-toggle="tab"
-                                    href="#info">Personal Data</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="main-nav-a nav-link" id="nav-course" data-toggle="tab" href="#course">My
-                                    Courses</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!--left navigation bar end-->
-                    <!--right button bar start-->
-                    <div class="navigation-btn-c col-4 offset-2">
-                        <div class="row">
-                            <button type="button" class="navigation-button btn btn-info col-4 offset-1">backup</button>
-                            <button type="button" class="navigation-button btn btn-danger col-4 offset-2">Log
-                                out</button class="btn btn-info">
-                        </div>
-                    </div>
-                    <!--right button bar end-->
-                </div>
-            </div>
+        <div class="user-intro-b">
+            <h6 id="text-intro">
+                introduction here.introduction here.
+                introduction here.introduction here.
+                introduction here.introduction here.
+                introduction here.introduction here.
+                introduction here.introduction here.
+            </h6>
         </div>
     </div>
-    <!--navigation end-->
+    <!--profile end-->
+</header>
+<!--head end-->
 
-    <!--main content start-->
-    <div class="row cont">
-        <div class="col-10 offset-1">
-            <div class="row no-gutters">
-                <!--sub navigation start-->
-                <div class="col-2 no-gutters left-nav">
-                    <ul class="nav flex-column sub-nav">
-                        <li class="nav-item">
-                            <a class="sub-nav-a nav-link active sub-nav-active" data-toggle="pill" id="choice1"
-                                href="#">choice1</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="sub-nav-a nav-link" data-toggle="pill" id="choice2" href="#">choice2</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="sub-nav-a nav-link" data-toggle="pill" id="choice3" href="#">choice3</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="sub-nav-a nav-link" data-toggle="pill" id="choice4" href="#">choice4</a>
-                        </li>
-                    </ul>
-                </div>
-                <!--sub navigation end-->
-                <!--content start-->
-                <div class="tab-content col-10 no-gutters">
-                    <!--information start-->
-                    <div class="tab-pane fade show active" id="info">
-                        <div style="height: 1000px;background-color: white;"></div>
-                    </div>
-                    <!--information end-->
-                    <!--course start-->
-                    <div class="tab-pane fade" id="course">
-                        <div style="height: 1000px;background-color: white;">
-							<td height="62px">
-								<div style="position: absolute; line-height: 62px;"><a href="">第n次作业</a></div><button class="btn btn-info" style="float: right; line-height: 62px;">submit</button>
-							</td>
-							<td height="62px">
-								<div style="position: absolute; line-height: 62px;"><a href="">第n次作业</a></div><button class="btn btn-info" style="float: right; line-height: 62px;">view</button>
-							</td>
-                            <!--<button class="btn btn-info">submit</button>-->
-                        </div>
-                    </div>
-                    <!--course end-->
-                </div>
-                <!--content end-->
-            </div>
+<!--navigation start-->
+<div class="row">
+    <!--left navigation bar start-->
+    <div class="navigation-nav-c col-6">
+        <ul class="nav nav-justified main-nav">
+            <li class="nav-item">
+                <a class="main-nav-a nav-link active main-nav-active" id="nav-info" data-toggle="tab"
+                   href="#info">Personal Data</a>
+            </li>
+            <li class="nav-item">
+                <a class="main-nav-a nav-link" id="nav-course" data-toggle="tab" href="#course">My
+                    Courses</a>
+            </li>
+        </ul>
+    </div>
+    <!--left navigation bar end-->
+    <!--right button bar start-->
+    <div class="navigation-btn-c col-4 offset-2">
+        <div class="row">
+            <button type="button" class="navigation-button btn btn-info col-4 offset-1">backup</button>
+            <button type="button" class="navigation-button btn btn-danger col-4 offset-2">Log
+                out
+            </button>
         </div>
     </div>
-    <!--main content end-->
+    <!--right button bar end-->
+</div>
+<!--navigation end-->
 
-    <!--footer start-->
-    <footer class="row">
-        <div class="footer-box">
-            <div class="contact">
-                <h6 class="text-contact">contact us</h6>
-                <h6 class="text-contact"><a>here</a> or <a>here</a>.</h6>
+<!--main content start-->
+<div class="row cont">
+    <div class="col-10 offset-1">
+        <div class="row no-gutters">
+            <!--sub navigation start-->
+            <div class="col-2 no-gutters left-nav">
+                <ul class="nav flex-column sub-nav">
+                    <li class="nav-item">
+                        <a class="sub-nav-a nav-link active sub-nav-active" data-toggle="pill" id="choice1"
+                           href="#">choice1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sub-nav-a nav-link" data-toggle="pill" id="choice2" href="#">choice2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sub-nav-a nav-link" data-toggle="pill" id="choice3" href="#">choice3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sub-nav-a nav-link" data-toggle="pill" id="choice4" href="#">choice4</a>
+                    </li>
+                </ul>
             </div>
-            <div class="share">
-                <img class="share-img" src="{% static 'homework/materials/icons/sina.png' %}">
-                <img class="share-img" src="{% static 'homework/materials/icons/wc.png' %}">
-                <img class="share-img" src="{% static 'homework/materials/icons/gh.png' %}">
+            <button class="btn btn-info">submit</button>
+            <!--sub navigation end-->
+            <!--content start-->
+            <div class="tab-content col-10 no-gutters">
+                <!--information start-->
+                <div class="tab-pane fade show active" id="info">
+                    <div style="height: 1000px;background-color: white;"></div>
+                </div>
+                <!--information end-->
+                <!--course start-->
+                <div class="tab-pane fade" id="course">
+                    <div style="height: 1000px;background-color: white;">
+                        <td height="62px">
+                            <div style="position: absolute; line-height: 62px;"><a href="">第n次作业</a></div>
+                            <button class="btn btn-info" style="float: right; line-height: 62px;">submit</button>
+                        </td>
+                        <td height="62px">
+                            <div style="position: absolute; line-height: 62px;"><a href="">第n次作业</a></div>
+                            <button class="btn btn-info" style="float: right; line-height: 62px;">view</button>
+                        </td>
+                        <!--<button class="btn btn-info">submit</button>-->
+                    </div>
+                </div>
+                <!--course end-->
             </div>
+            <!--content end-->
         </div>
-    </footer>
-    <!--footer end-->
+    </div>
+</div>
+<!--main content end-->
 
-    <!--script-->
-    <script src="{% static 'homework/js/jquery-3.4.1.js'%}"></script>
-    <script src="{% static 'homework/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
-    <script src="{% static 'homework/js/account.js'%}"></script>
+<!--footer start-->
+<footer class="row">
+    <div class="footer-box">
+        <div class="contact">
+            <h6 class="text-contact">contact us</h6>
+            <h6 class="text-contact"><a>here</a> or <a>here</a>.</h6>
+        </div>
+        <div class="share">
+            <img class="share-img" src="{% static 'homework/materials/icons/sina.png' %}">
+            <img class="share-img" src="{% static 'homework/materials/icons/wc.png' %}">
+            <img class="share-img" src="{% static 'homework/materials/icons/gh.png' %}">
+        </div>
+    </div>
+</footer>
+<!--footer end-->
+
+<!--script-->
+<script src="{% static 'homework/js/jquery-3.4.1.js' %}"></script>
+<script src="{% static 'homework/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'homework/js/account.js' %}"></script>
 </body>
 
 </html>

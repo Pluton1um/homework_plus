@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     /*main navigation toggle*/
-    $("#nav-info,#nav-course").click(function () {
+    $("#nav-info,#nav-course").on('click', function () {
         $(".main-nav-a").removeClass("main-nav-active");
         $(this).addClass("main-nav-active");
     });
