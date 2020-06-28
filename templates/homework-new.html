@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <!--meta-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>发布新的作业</title>
+    <!--css-->
+    <link rel="shortcut icon" href="{% static 'homework/materials/icons/favicon.ico' %}" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'homework/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'homework/css/forall.css' %}">
+    <link rel="stylesheet" href="{% static 'homework/css/homework-new.css' %}">
+</head>
+
+<body class="container-fluid">
+
+    <div class="row"></div>
+    <table class="col-10 offset-1">
+        <tr>
+            <td class="table-title">
+                作业名称
+            </td>
+            <td class="table-content">
+                <input class="homework-title" type="text">
+            </td>
+        </tr>
+        <tr>
+            <!--作业提交总数，默认为上课人数，可根据老师的实际情况修改-->
+            <td class="table-title">
+                待收总数
+            </td>
+            <td class="table-title">
+                <input class="homework-num" type="number" placeholder="50">
+            </td>
+        </tr>
+        <tr>
+            <td class="table-title">
+                截止日期
+            </td>
+            <td class="table-content">
+                <input class="homework-ddl" type="datetime">
+            </td>
+        </tr>
+        <tr>
+            <td class="table-title">
+                作业要求
+            </td>
+            <td class="table-content">
+                <textarea class="homework-demand"></textarea>
+                <!-- <input class="homework-demand" type="text"> -->
+                <!--这里可以是用 <textarea></textarea> -->
+            </td>
+        </tr>
+    </table>
+
+    <!--script-->
+    <script src="{% static 'homework/js/jquery-3.4.1.js' %}"></script>
+    <script src="{% static 'homework/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'homework/js/  ' %}"></script>
+</body>
+
+</html>
