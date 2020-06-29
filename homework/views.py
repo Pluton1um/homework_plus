@@ -53,3 +53,6 @@ def accountTest(request):
 
 def homeworkNew(request):
     return render(request, 'homework-new.html')
+
+def homeworkDetail(request):
+    return render(request, 'homework-detail.html')

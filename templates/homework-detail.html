@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <!--meta-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>作业详情</title>
+    <!--css-->
+    <link rel="shortcut icon" href="{% static 'homework/materials/icons/favicon.ico' %}" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'homework/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'homework/css/homework-detail.css' %}">
+
+</head>
+
+<body>
+
+    <table class="background-table">
+        <tr>
+            <!--column 1 start-->
+            <td class="td-nav">
+                <ul class="nav nav-pills flex-column" id="navigation-bar">
+                    {% for x in y %}
+                    <li class="nav-items">
+                        <a class="nav-link nav-a nav-a-active" data-toggle="collapse" data-target="#sub-nav-1">学生一</a>
+                        <!--second level nav start-->
+                        <!-- <div class="collapse navbar-collapse" id="sub-nav-1"> -->
+                        <ul class="nav nav-pills collapse" id="sub-nav-1" data-parent="#navigation-bar">
+                            {% for x in y %}
+                            <li class="nav-item">
+                                <a class="nav-link sub-nav-a" data-toggle="pill" href="#student1-page1">第一张</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        <!--second level nav end-->
+                    </li>
+                    {% endfor %}
+
+                    <!--this is a test start 外层循环测试-->
+                    <li class="nav-items">
+                        <a class="nav-link nav-a nav-a-active" data-toggle="collapse" data-target="#sub-nav-1">学生一</a>
+                        <!--second level nav start-->
+                        <ul class="nav nav-pills collapse" id="sub-nav-1" data-parent="#navigation-bar">
+                            <!--this is a test start 内层循环测试-->
+                            <li class="nav-item">
+                                <a class="nav-link sub-nav-a" data-toggle="pill" href="#student1-page1">第一张</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link sub-nav-a" data-toggle="pill" href="#student1-page2">第二张</a>
+                            </li>
+                            <!--this is a test end-->
+                        </ul>
+                        <!--second level nav end-->
+                    </li>
+                    <li class="nav-items">
+                        <a class="nav-link nav-a" data-toggle="collapse" data-target="#sub-nav-2">学生二</a>
+                        <!--second level nav start-->
+                        <ul class="nav nav-pills collapse" id="sub-nav-2" data-parent="#navigation-bar">
+                            <!--this is a test start-->
+                            <li class="nav-item">
+                                <a class="nav-link sub-nav-a" data-toggle="pill" href="#student2-page1">第一张</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link sub-nav-a" data-toggle="pill" href="#student2-page2">第二张</a>
+                            </li>
+                            <!--this is a test end-->
+                        </ul>
+                        <!--second level nav end-->
+                    </li>
+                    <!--this is a test end-->
+
+                </ul>
+            </td>
+            <!--column 1 end-->
+
+            <!--column 2 start-->
+            <td class="td-arrow">
+                <img class="arrow-img" src="{% static 'homework/materials/icons/arrow-left.png' %}" title="收起侧边栏">
+            </td>
+            <!--column 2 end-->
+
+            <!--column 3 start-->
+            <td class="td-content">
+
+                <!--sub table start-->
+                <table class="sub-table">
+                    <tr>
+                        <!--td left img start-->
+                        <td class="sub-td-img">
+                            <div class="tab-content">
+                                {% for a in b %}
+                                <img class="tab-pane active" id="student1-page1" src="#"
+                                    onchange=convertImageToCanvas(this)>
+                                {% endfor %}
+
+                                <!--this is a test start-->
+                                <img class="tab-pane active" id="student1-page1"
+                                    src="{% static 'homework/materials/images/lb1.png' %}">
+                                <img class="tab-pane" id="student1-page2"
+                                    src="{% static 'homework/materials/images/lb2.png' %}">
+                                <img class="tab-pane" id="student2-page1"
+                                    src="{% static 'homework/materials/images/lb3.png' %}">
+                                <img class="tab-pane" id="student2-page2"
+                                    src="{% static 'homework/materials/images/login.png' %}">
+                                <!--this is a test end-->
+                            </div>
+                            <canvas class="can"></canvas>
+                        </td>
+                        <!--td left img end-->
+
+                        <!--td right panel start-->
+                        <td class="sub-td-pane">
+                            <button class="button-draw btn btn-info" type="button">画笔工具</button>
+                            <!-- <div class="button-color">
+                                <p>选择画笔颜色：</p>
+                                <input id="color" class="color" value="red" onchange="changePenColor()">
+                            </div> -->
+                            <p style="margin-top: 20px;margin-left: 20px;">分数:</p>
+                            <input class="point" type="text" placeholder="满分10分">
+                            <p style="margin-top: 20px;margin-left: 20px;">备注：</p>
+                            <textarea class="message"></textarea>
+                            <button class="button-save btn btn-info" type="button">保 存</button>
+                            <p class="img-url" style="display: none;">#</p>
+                        </td>
+                        <!--td right panel end-->
+                    </tr>
+                </table>
+                <!--sub table end-->
+
+            </td>
+            <!--column 3 end-->
+        </tr>
+    </table>
+
+    <!--script-->
+    <script src="{% static 'homework/js/jquery-3.4.1.js' %}"></script>
+    <script src="{% static 'homework/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'homework/js/homework-detail.js' %}"></script>
+    <!-- <script src="{% static 'homework/js/draw.js' %}"></script> -->
+</body>
+
+</html>

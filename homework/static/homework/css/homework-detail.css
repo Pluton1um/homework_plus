@@ -1,0 +1,150 @@
+body {
+    height: 600px;
+}
+
+#can {
+    width: 100%;
+    height: 100%;
+    max-width: inherit;
+    max-height: inherit;
+    border: 2px solid #17a2b8;
+}
+
+.background-table {
+    width: 100%;
+    height: 100%;
+    max-height: 600px;
+}
+
+tr,
+td {
+    border: 1px solid black;
+}
+
+.nav {
+    background-color: white;
+    cursor: pointer;
+}
+
+.td-nav {
+    width: 15%;
+    min-width: 100px;
+    background-color: #f3f3f3;
+    border-right: 3px solid gray;
+}
+
+.td-arrow {
+    width: 5%;
+}
+
+.td-content {
+    width: 80%;
+    border-left: 3px solid gray;
+}
+
+.arrow-img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: all 300ms ease-out;
+}
+
+.arrow-rotate {
+    transform: rotate(180deg);
+}
+
+.nav-link {
+    color: #484848;
+}
+
+.nav-link:hover {
+    color: gray;
+}
+
+.nav-a {
+    border: 1px solid white;
+    padding: 10px 15px;
+    transition: all 200ms ease-out;
+}
+
+.nav-a-active {
+    border: 3px solid white;
+    color: white !important;
+    background-color: #17a2b8;
+    border-radius: 7px !important;
+}
+
+.sub-nav-a-active {
+    color: white;
+    background-color: #17a2b8 !important;
+}
+
+.tab-content {
+    height: 100%;
+    width: 100%;
+}
+
+.sub-table {
+    width: 100%;
+    height: 100%;
+}
+
+.sub-td-img {
+    width: 70%;
+    height: 100%;
+    max-width: 600px;
+    max-height: 600px;
+}
+
+.tab-content {
+    width: 100%;
+    height: 100%;
+    max-width: inherit;
+    max-height: inherit;
+}
+
+.tan-pane {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.sub-td-pane {
+    padding-top: 20px;
+    width: 30%;
+    min-width: 300px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.point {
+    width: 90%;
+    margin-left: 5%;
+    padding: 10px 15px;
+    outline: none;
+}
+
+.message {
+    margin-bottom: 20px;
+    margin-left: 5%;
+    padding: 15px;
+    width: 90%;
+    height: 300px;
+    min-height: 200px;
+    max-height: 400px;
+    outline: none;
+}
+
+.point:focus,
+.message:focus {
+    border: 2px solid #17a2b8;
+    box-shadow: 0 0 3px 0 rgb(23, 162, 184, 0.5);
+}
+
+.btn {
+    margin-left: 10px;
+}

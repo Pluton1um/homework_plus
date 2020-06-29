@@ -23,4 +23,5 @@ urlpatterns = [
     path('account-teacher', views.accountTeacher),
     path('account-test', views.accountTest),
     path('homework-new', views.homeworkNew),
+    path('homework-detail', views.homeworkDetail),
 ]
