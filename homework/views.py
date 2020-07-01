@@ -196,3 +196,7 @@ def homeworkDetail(request):
             "homework": hw,
         }
     return render(request, 'homework-detail.html', content)
+
+
+def homeworkUpload(request):
+    return render(request, 'send.html')

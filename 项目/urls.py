@@ -24,4 +24,5 @@ urlpatterns = [
     path('account-test', views.accountTest),
     path('homework-new', views.homeworkNew),
     path('homework-detail', views.homeworkDetail),
+    path('homework-upload', views.homeworkUpload)
 ]

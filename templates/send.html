@@ -1,0 +1,196 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+	<!--meta-->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>作业提交</title>
+	<!--css-->
+	<link rel="shortcut icon" href="{% static 'homework/materials/icons/favicon.ico' %}" type="image/x-icon" />
+	<link rel="stylesheet" href="{% static 'homework/bootstrap/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'homework/css/forall.css' %}">
+
+	<style>
+		body {
+			background-color: #f3f3f3;
+		}
+
+		textarea,
+		input {
+			outline: none;
+		}
+
+		label {
+			width: fit-content;
+			height: fit-content;
+		}
+
+		.col-10 {
+			padding: 10px 20px;
+			background-color: white;
+			box-shadow: 3px 0 3px 0 rgb(175, 175, 175),
+				-3px 0 3px 0 rgb(175, 175, 175);
+		}
+
+		.starter {
+			text-align: center;
+		}
+
+		.homework-description {
+			padding: 10px 15px;
+			border: 1px solid black;
+			border-radius: 10px;
+			width: 100%;
+			height: fit-content;
+			min-height: 100px;
+			cursor: pointer;
+			/* transition: all 100ms ease-out; */
+			margin-bottom: 20px;
+		}
+
+		.homework-description:hover,
+		.homework-description:focus {
+			border: 2px solid #17a2b8;
+			box-shadow: 0 0 3px 0 rgb(23, 162, 184, 0.5);
+		}
+
+		/* .file {
+			padding: 10px 15px;
+			border-radius: 10px 10px 0 0;
+			border: 1px solid black;
+			width: 100%;
+			height: fit-content;
+			min-height: 50px;
+			overflow: hidden;
+			word-wrap: none;
+		} */
+
+		.picture {
+			padding: 10px 15px;
+			border: 1px solid black;
+			border-radius: 10px;
+			height: fit-content;
+			min-height: 300px;
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: row;
+			/* align-items: flex-start;
+			justify-content: space-around; */
+		}
+
+		.img-add {
+			margin: 5px;
+			padding: 50px;
+			width: 150px;
+			height: 150px;
+			border-radius: 5px;
+			border: 2px dashed #969696;
+			transition: all 300ms ease-out;
+			cursor: pointer;
+			opacity: 0.5;
+		}
+
+		.img-add:hover {
+			opacity: 1;
+		}
+
+		.loaded {
+			margin: 5px;
+			width: 150px;
+			height: 150px;
+			border-radius: 5px;
+			transition: all 300ms ease-out;
+			cursor: pointer;
+			object-fit: cover;
+		}
+
+		.loaded:hover {
+			filter: brightness(50%);
+		}
+
+		.tip {
+			display: none;
+			transform: rotate(45deg);
+			translate: all 300ms ease-out;
+			width: 50px;
+			height: 50px;
+		}
+
+		.loaded-div:hover .tip {
+			display: show;
+			transform: rotate(-45deg);
+		}
+	</style>
+</head>
+
+<body class="container">
+	<div class="row">
+		<div class="col-10 offset-1">
+			<br>
+			<h3 class="homeworkname">作业提交</h3>
+			<br>
+			<h5 class="homeworkinfo">作业描述：</h5>
+			<textarea class="homework-description"></textarea>
+			<br>
+			<h5 class="homeworkname">上传图片：</h5>
+
+			<div class="picture">
+
+				<!--picture show & remove btn start-->
+				<!--这部分的实现在下面的js代码里，通过prepend不断添加预览图-->
+				<!--picture show & remove btn end-->
+
+				<!--tip start-->
+				<img class="tip" src="{% static 'homework/materials/icons/delete.png' %}">
+				<!--tip end-->
+
+				<!--picture add btn start-->
+				<label for="file">
+					<img class="img-add" src="{% static 'homework/materials/icons/add.png' %}">
+				</label>
+				<input type="file" id="file" style="display: none;" />
+				<!--picture add btn end-->
+
+			</div>
+			<br><button type="button" class="btn btn-info">提交</button>
+		</div>
+	</div>
+
+	<!--script-->
+	<script src="{% static 'homework/js/jquery-3.4.1.js' %}"></script>
+	<script src="{% static 'homework/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+	<script>
+		$(document).ready(function () {
+
+			// init
+			$('.loaded').hide();
+
+			// 点击添加图片
+			// $('.img-add').on('click', function () {
+			$('#file').on('change', function () {
+				var file_dir = $('#file').prop('files')[0];
+				// console.log('file_dir:' + file_dir);
+				if (file_dir) {
+					var tempt = new FileReader();
+					tempt.readAsDataURL(file_dir);
+					tempt.onloadend = function (even) {
+						let img = "<img class='loaded' src=" + even.currentTarget.result + " title='点击删除'>";
+						$('.picture').prepend(img);
+						// $('.loaded').attr('src', even.currentTarget.result);
+					}
+				}
+			});
+
+			// 点击删除图片
+			$('.loaded').on('click', function () {
+				consonle.log(1);
+				$(this).remove();
+			});
+		});
+	</script>
+</body>
+
+</html>
