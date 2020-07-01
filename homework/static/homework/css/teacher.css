@@ -1,3 +1,7 @@
+textarea {
+    outline: none;
+}
+
 .info-div {
     height: fit-content;
     background-color: white;
@@ -64,4 +68,34 @@
 .single-delete {
     float: right;
     margin-left: 1ex;
+}
+
+.info-div {
+    background-color: white;
+    height: fit-content;
+    width: 100%;
+}
+
+.info-table {
+    width: 80%;
+    margin: 20px 10%;
+}
+
+.table-title {
+    padding: 10px;
+    width: 20%;
+}
+
+.table-content {
+    padding: 10px;
+    width: 60%
+}
+
+.course-info-textarea {
+    border-radius: 10px;
+    padding: 10px 15px;
+    width: 600px;
+    max-width: 600px;
+    min-width: 100px;
+    height: fitcontent;
 }

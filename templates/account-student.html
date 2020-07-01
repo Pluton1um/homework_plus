@@ -20,16 +20,16 @@
 <header class="row top">
     <div class="background-a">
         <img id="background-img" src="{% static 'homework/materials/images/lb1.png' %}"
-             title="click to send background">
+             title="click to change background">
     </div>
-    <img id="user-img" src="{% static 'homework/materials/user/icebear.jpg' %}" title="click to send user image">
+    <img id="user-img" src="{% static 'homework/materials/user/icebear.jpg' %}" title="click to change user image">
     <!--profile start-->
     <div class="user-a">
         <div class="user-info-b">
-            <h2 id="text-name">name</h2>
+            <h2 id="text-name">{{ student.name }}</h2>
             <h5 id="text-info">
                 <span>city</span>
-                <apan>school</apan>
+                <apan>{{ school.name }}</apan>
             </h5>
         </div>
         <div class="user-intro-b">
@@ -44,365 +44,190 @@
     </div>
     <!--profile end-->
 </header>
-    <!--head end-->
-
+<!--head end-->
+<form class="school-form column-center" action="" method="post">
     <!--navigation start-->
     <div class="row">
-    <!--substitute of navigation-a to realize the smooth transition of sticky-top navigationg-->
-    {#    <div class="replacement"></div>#}
-    <div class="navigation-a">
-        <div class="navigation-b col-10 offset-1">
-            <div class="row">
-                <!--left navigation bar start-->
-                <div class="navigation-nav-c col-6">
-                    <ul class="nav nav-justified main-nav">
-                        <li class="nav-item">
-                            <a class="main-nav-a nav-link active main-nav-active" id="nav-info" data-toggle="tab"
-                               href="#info">个人 信息</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="main-nav-a nav-link" id="nav-course" data-toggle="tab" href="#course">我的 课程</a>
-                        </li>
-                    </ul>
-                </div>
-                <!--left navigation bar end-->
-                <!--right button bar start-->
-                <div class="navigation-btn-c col-4 offset-2">
-                    <div class="row">
-                        <button type="button" class="navigation-button btn btn-info col-4 offset-1">backup</button>
-                        <button type="button" class="navigation-button btn btn-danger col-4 offset-2">退出 登录
-                        </button>
+        <!--substitute of navigation-a to realize the smooth transition of sticky-top navigationg-->
+        {#    <div class="replacement"></div>#}
+        <div class="navigation-a">
+            <div class="navigation-b col-10 offset-1">
+                <div class="row">
+                    <!--left navigation bar start-->
+                    <div class="navigation-nav-c col-6">
+                        <ul class="nav nav-justified main-nav">
+                            <li class="nav-item">
+                                <a class="main-nav-a nav-link active main-nav-active" id="nav-info" data-toggle="tab"
+                                   href="#info">个人信息</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="main-nav-a nav-link" id="nav-course" data-toggle="tab" href="#course">
+                                    我的课程</a>
+                            </li>
+                        </ul>
                     </div>
+                    <!--left navigation bar end-->
+                    <!--right button bar start-->
+                    <div class="navigation-btn-c col-4 offset-2">
+                        <div class="row">
+                            <button type="submit" name="exit" class="navigation-button btn btn-danger col-4 offset-2">
+                                退出登录
+                            </button>
+                        </div>
+                    </div>
+                    <!--right button bar end-->
                 </div>
-                <!--right button bar end-->
             </div>
         </div>
     </div>
-</div>
     <!--navigation end-->
 
     <!--main content start-->
     <div class="row">
-    <div class="col-10 offset-1">
-        {#        <div class="tab-content">#}
-        {#            <div class="tab-pane active" id="info">#}
-        {#                <button class="btn btn-info">1</button>#}
-        {#            </div>#}
-        {#            <div class="tab-pane" id="course">#}
-        {#                <button class="btn btn-info">2</button>#}
-        {#            </div>#}
-        {#        </div>#}
-        <div class="tab-content">
-            <!--content start-->
-            {#            <div class="col-12 no-gutters">#}
-            <!--information start-->
-            <div class="tab-pane fade show active" id="info">
-                <div class="row">
-                    <div class="col-12 info-div">
-                        <table>
-                        <thead></thead>
-                        <tbody>
-                            <tr>
-                                <td height="50px">
-                                    <div>姓名：</div>
-                                </td>
-                            </tr>
-                        <tr>
-                                <td height="50px">
-                                    <div>班级：</div>
-                                </td>
-                            </tr>
-                        <tr>
-                                <td height="50px">
-                                    <div>个人简介：</div>
-                                </td>
-                            </tr>
-                        <tr>
-                                <td height="50px">
-                                    <div>性别：</div>
-                                </td>
-                            </tr>
-                        <tr>
-                                <td height="50px">
-                                    <div>年龄：</div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <div class="col-10 offset-1">
+
+            <div class="tab-content">
+                <!--content start-->
+                {#            <div class="col-12 no-gutters">#}
+                <!--information start-->
+                <div class="tab-pane fade show active" id="info">
+                    <div class="row">
+                        <div class="col-12 info-div"></div>
                     </div>
+                    <div class="info-div" style="height: fit-content;background-color: white;"></div>
                 </div>
-                <div class="info-div" style="height: fit-content;background-color: white;"></div>
-            </div>
-            <!--information end-->
-            <!--course start-->
-            <div class="tab-pane fade" id="course">
-                <div class="row">
-                    <!--sub navigation start-->
-                    <div class="col-2 no-gutters">
-                        <ul class="nav flex-column sub-nav">
-                            {% for x in x %}
+                <!--information end-->
+                <!--course start-->
+                <div class="tab-pane fade" id="course">
+                    <div class="row">
+                        <!--sub navigation start-->
+                        <div class="col-2 no-gutters">
+                            <ul class="nav flex-column sub-nav">
                                 <li class="nav-item">
                                     <a class="sub-nav-a nav-link active sub-nav-active" data-toggle="pill"
-                                       id="choice1"
-                                       href="#">课程1</a>
+                                       id="choice0"
+                                       href="#course0">{{ subject_0.name }}</a>
                                 </li>
-                            {% endfor %}
-                            <!-- this is a test start -->
-                            <li class="nav-item">
-                                <a class="sub-nav-a nav-link active sub-nav-active" data-toggle="pill"
-                                   id="choice1"
-                                   href="#course1">课程1</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="sub-nav-a nav-link" data-toggle="pill" id="choice2"
-                                   href="#course2">课程2</a>
-                            </li>
-                            <!-- this is a test end -->
-                        </ul>
-                    </div>
-                    <!--sub navigation end-->
-                    <div class="col-10 no-gutters info-div">
-                        <div class="tab-content">
-                            <!--course 1 start-->
-                            <div class="tab-pane fade show active" id="course1">
-                                <div class="course-info-head">
-                                    <div class="course-info-head-left">
-                                        <span class="course-name">这是course1</span>
-                                        <span class="course-teacher">这是任课教师</span>
-                                        <p title="课程简介">这是成绩评定方式（可由老师编辑，学生可见）</p>
-                                        <p title="课程简介">这是course1简介（可由老师编辑，学生可见）</p>
+                                {% for sub in info %}
+                                    <li class="nav-item">
+                                        <a class="sub-nav-a nav-link" data-toggle="pill"
+                                           id="choice{{ forloop.counter }}"
+                                           href="#course{{ forloop.counter }}">{{ sub.subject.name }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <!--sub navigation end-->
+                        <div class="col-10 no-gutters info-div">
+                            <div class="tab-content">
+                                <!--course 1 start-->
+                                <div class="tab-pane fade show active" id="course0">
+                                    <div class="course-info-head">
+                                        <div class="course-info-head-left">
+                                            <span class="course-name">{{ subject_0.name }}</span>
+                                            <span class="course-teacher">{{ teacher_0.name }}</span>
+                                            <p title="点击编辑">这是成绩评定方式（可由老师编辑，学生可见）</p>
+                                            <p title="点击编辑">这是course1简介（可由老师编辑，学生可见）</p>
+                                        </div>
                                     </div>
-                             <!--       <div class="course-info-head-right">
-                                        <button type="button" class="new-homework btn btn-info">发 布</button>
-                                    </div>-->
-                                </div>
-                                <div class="course-info-content">
-                                    {% for homeworks in mysql %}
-                                        <div class="single-info-content">
-                                            <p class="single-name">作业1:XXX</p>
-                                            <p class="single-count">已提交</p><!--状态-->
-                                            <p class="single-ddl">20-06-26</p><!--截止时间-->
-                                            <button class="single-show btn btn-info">查 看</button>
-                                        </div>
-                                    {% endfor %}
-                                    <!-- this is a test start -->
-                                    <div class="single-info-content">
-                                        <p class="single-name">作业1:XXX</p>
-                                        <p class="single-count">已提交</p><!--状态-->
-                                        <p class="single-ddl">20-06-26</p><!--截止时间-->
-                                        <div class="single-button-div">
-                                            <button class="single-show btn btn-info" data-toggle="modal" data-target="#view">查 看</button>
-                                            <!--查看作业-->
-                                          <!--  <button class="single-delete btn btn-danger">删 除</button>-->
-                                            <!--删除无用和错误的作业-->
-                                        </div>
-                                        <div class="modal fade" id="view" tabindex="-1" role="dialog" aria-labelledby="view" aria-hidden="true">
-						                    <div class="modal-dialog modal-sm">
-						                        <div style="height:500px;weight:500px" class="modal-content">
-						                            <div class="modal-header">
-                                                        <h5 class="modal-title" id="homeworkview">作业详情</h5>
-						                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-						                                </button>
-						                            </div>
-						                <div class="modal-body">
-						                    <form>
-						                      <div class="form-group">
-						                          <h2>这是作业图片</h2>
-						                     </div>
-									    		<div class="form-group">
-										    	   <h2>作业批改</h2>
-								    			</div>
-                                                <div class="form-group">
-										    	   <h2>作业成绩</h2>
-								    			</div>
-						                  </form>
-						                  </form>
-						                 </div>
-						                          <!--  <div class="modal-footer">
-						                                 <button type="button" class="btn btn-primary">提交</button>
-						                            </div>-->
-						                        </div>
+                                    <div class="course-info-content">
+                                        {% for hw in homework_0 %}
+                                            <div class="single-info-content">
+                                                <p class="single-name">{{ hw.assigment.name }}</p>
+                                                <p class="single-count">{{ hw.already }}/{{ hw.need }}</p><!--收到四十分之三十份-->
+                                                <p class="single-ddl">{{ hw.assigment.start_time }}~{{ hw.assigment.end_time }}</p>
+                                                <!--截止时间-->
+                                                <div class="single-button-div">
+                                                    {% if hw.homework.whether_submit == 0 %}
+                                                        <button type="submit" name="check" value="{{ assi.id }}"
+                                                                class="single-show btn btn-info">提交作业
+                                                        </button>
+                                                    {% elif hw.homework.whether_submit == 1 and hw.homework.whether_correct == 0%}
+                                                        <button type="submit" name="check" value="{{ assi.id }}"
+                                                                class="single-show btn btn-info">重新提交
+                                                        </button>
+                                                    {% else %}
+                                                        <button type="submit" name="check" value="{{ assi.id }}"
+                                                                class="single-show btn btn-info">查看成绩{{ assi.homework.whether_submit }}
+                                                        </button>
+                                                    {% endif %}
+                                                </div>
                                             </div>
-					    	            </div>
+                                        {% endfor %}
                                     </div>
-                                    <div class="single-info-content">
-                                        <p class="single-name">作业1:XXX</p>
-                                        <p class="single-count">已提交</p><!--状态-->
-                                        <p class="single-ddl">20-06-26</p><!--截止时间-->
-                                        <div class="single-button-div">
-                                            <button class="single-show btn btn-info" data-toggle="modal" data-target="#view">查 看</button>
-                                            <!--查看作业-->
-                                          <!--  <button class="single-delete btn btn-danger">删 除</button>-->
-                                            <!--删除无用和错误的作业-->
-                                        </div>
-                                        <div class="modal fade" id="view" tabindex="-1" role="dialog" aria-labelledby="view" aria-hidden="true">
-						                    <div class="modal-dialog modal-sm">
-						                        <div style="height:500px;weight:500px" class="modal-content">
-						                            <div class="modal-header">
-                                                        <h5 class="modal-title" id="homeworkview">作业详情</h5>
-						                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-						                                </button>
-						                            </div>
-						                <div class="modal-body">
-						                    <form>
-						                      <div class="form-group">
-						                          <h2>这是作业图片</h2>
-						                     </div>
-									    		<div class="form-group">
-										    	   <h2>作业批改</h2>
-								    			</div>
-                                                <div class="form-group">
-										    	   <h2>作业成绩</h2>
-								    			</div>
-						                  </form>
-						                 </div>
-						                          <!--  <div class="modal-footer">
-						                                 <button type="button" class="btn btn-primary">提交</button>
-						                            </div>-->
-						                        </div>
-                                            </div>
-					    	            </div>
-                                    </div>
-                                    <!-- this is a test end -->
                                 </div>
-                            </div><!--course 1 end-->
-                            <!--course 2 start-->
-                            <div class="tab-pane fade" id="course2">
-                                <div class="course-info-head">
-                                    <div class="course-info-head-left">
-                                        <span class="course-name">这是course2</span>
-                                        <span class="course-teacher">这是任课教师</span>
-                                        <p title="课程简介">这是成绩评定方式（可由老师编辑，学生可见）</p>
-                                        <p title="课程简介">这是course2简介（可由老师编辑，学生可见）</p>
-                                    </div>
-                             <!--       <div class="course-info-head-right">
-                                        <button type="button" class="new-homework btn btn-info">发 布</button>
-                                    </div>-->
-                                </div>
-                                <div class="course-info-content">
-                                    {% for homeworks in mysql %}
-                                        <div class="single-info-content">
-                                            <p class="single-name">作业1:XXX</p>
-                                            <p class="single-count">已提交</p><!--状态-->
-                                            <p class="single-ddl">20-06-26</p><!--截止时间-->
-                                            <button class="single-show btn btn-info">查 看</button>
-                                            <!--点击跳转到一个新网页进行作业批改-->
-                                        </div>
-                                    {% endfor %}
-                                    <!-- this is a test start -->
-                                    <div class="single-info-content">
-                                        <p class="single-name">作业2:yyy</p>
-                                        <p class="single-count">未提交</p><!--收到四十分之三十份-->
-                                        <p class="single-ddl">20-06-26</p><!--截止时间-->
-                                        <div class="single-button-div">
-                                            <button class="single-show btn btn-info" data-toggle="modal" data-target="#send">提 交</button>
-                                            <!--提交作业-->
-                                          <!--  <button class="single-delete btn btn-danger">删 除</button>-->
-                                            <!--删除无用和错误的作业-->
-                                        </div>
-                                        <div class="modal fade" id="send" tabindex="-1" role="dialog" aria-labelledby="send" aria-hidden="true">
-						                    <div class="modal-dialog modal-sm">
-						                        <div style="height:500px;weight:500px" class="modal-content">
-						                            <div class="modal-header">
-                                                        <h5 class="modal-title" id="homeworksend">作业提交</h5>
-						                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-						                                </button>
-						                            </div>
-						                <div class="modal-body">
-						                    <form>
-						                      <div class="form-group">
-						                          <label for="picture" class="control-label">上传图片</label>
-						                           <input class="file" type="file" id="picture"/>
-						                     </div>
-									    		<div class="form-group">
-										    	    <label for="recipient-name" class="control-label">作业描述</label>
-										    	    <input class="form-control" type="text" id="recipient-name"/>
-								    			</div>
-						                  </form>
-						                 </div>
-						                            <div class="modal-footer">
-						                                 <button type="button" class="btn btn-primary">提交</button>
-						                            </div>
-						                        </div>
+                                <!--course 1 end-->
+                                <!--course 2 start-->
+                                {% for i in info %}
+                                    <div class="tab-pane fade" id="course{{ forloop.counter }}">
+                                        <div class="course-info-head">
+                                            <div class="course-info-head-left">
+                                                <span class="course-name">{{ i.subject.name }}</span>
+                                                <span class="course-teacher">{{ i.teacher.name }}</span>
+                                                <p title="点击编辑">这是成绩评定方式（可由老师编辑，学生可见）</p>
+                                                <p title="点击编辑">这是course1简介（可由老师编辑，学生可见）</p>
                                             </div>
-					    	            </div>
-                                    </div>
-                                    <div class="single-info-content">
-                                        <p class="single-name">作业2:yyy</p>
-                                        <p class="single-count">未提交</p><!--收到四十分之三十份-->
-                                        <p class="single-ddl">20-06-26</p><!--截止时间-->
-                                        <div class="single-button-div">
-                                            <button class="single-show btn btn-info" data-toggle="modal" data-target="#send">提 交</button>
-                                            <!--提交作业-->
-                                          <!--  <button class="single-delete btn btn-danger">删 除</button>-->
-                                            <!--删除无用和错误的作业-->
                                         </div>
-                                        <div class="modal fade" id="send" tabindex="-1" role="dialog" aria-labelledby="send" aria-hidden="true">
-						                    <div class="modal-dialog modal-sm">
-						                        <div style="height:500px;weight:500px" class="modal-content">
-						                            <div class="modal-header">
-                                                        <h5 class="modal-title" id="homeworksend">作业提交</h5>
-						                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-						                                </button>
-						                            </div>
-						                <div class="modal-body">
-						                    <form>
-						                      <div class="form-group">
-						                          <label for="picture" class="control-label">上传图片</label>
-						                           <input class="file" type="file" id="picture"/>
-						                     </div>
-									    		<div class="form-group">
-										    	    <label for="recipient-name" class="control-label">作业描述</label>
-										    	    <input class="form-control" type="text" id="recipient-name"/>
-								    			</div>
-						                  </form>
-						                 </div>
-						                            <div class="modal-footer">
-						                                 <button type="button" class="btn btn-primary">提交</button>
-						                            </div>
-						                        </div>
-                                            </div>
-					    	            </div>
+                                        <div class="course-info-content">
+                                            {% for assi in i.assigment %}
+                                                <div class="single-info-content">
+                                                    <p class="single-name">{{ assi.assigment.name }}</p>
+                                                    <p class="single-count">{{ assi.already }}/{{ assi.need }}</p><!--收到四十分之三十份-->
+                                                    <p class="single-ddl">{{ assi.assigment.start_time }}~{{ assi.assigment.end_time }}</p>
+                                                    <!--截止时间-->
+                                                    <div class="single-button-div">
+                                                    {% if assi.homework.whether_submit == 0 %}
+                                                        <button type="submit" name="check" value="{{ assi.id }}"
+                                                                class="single-show btn btn-info">提交作业
+                                                        </button>
+                                                    {% elif assi.homework.whether_submit == 1 and assi.homework.whether_correct == 0 %}
+                                                        <button type="submit" name="check" value="{{ assi.id }}"
+                                                                class="single-show btn btn-info">重新提交
+                                                        </button>
+                                                    {% else %}
+                                                        <button type="submit" name="check" value="{{ assi.id }}"
+                                                                class="single-show btn btn-info">查看成绩
+                                                        </button>
+                                                    {% endif %}
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
                                     </div>
-                                    <!-- this is a test end -->
-                                </div>
-                            </div><!--course 2 end-->
+                                {% endfor %}
+                                <!--course 2 end-->
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!--course end-->
+                {#            </div>#}
+                <!--content end-->
             </div>
-            <!--course end-->
-            {#            </div>#}
-            <!--content end-->
         </div>
     </div>
-</div>
     <!--main content end-->
-
-    <!--footer start-->
-    <footer class="row">
-        <div class="footer-box">
-            <div class="contact">
-                <h6 class="text-contact">contact us</h6>
-                <h6 class="text-contact"><a>here</a> or <a>here</a>.</h6>
-            </div>
-            <div class="share">
-                <img class="share-img" src="{% static 'homework/materials/icons/sina.png' %}">
-                <img class="share-img" src="{% static 'homework/materials/icons/wc.png' %}">
-                <img class="share-img" src="{% static 'homework/materials/icons/gh.png' %}">
-            </div>
+</form>
+<!--footer start-->
+<footer class="row">
+    <div class="footer-box">
+        <div class="contact">
+            <h6 class="text-contact">contact us</h6>
+            <h6 class="text-contact"><a>here</a> or <a>here</a>.</h6>
         </div>
-    </footer>
-    <!--footer end-->
+        <div class="share">
+            <img class="share-img" src="{% static 'homework/materials/icons/sina.png' %}">
+            <img class="share-img" src="{% static 'homework/materials/icons/wc.png' %}">
+            <img class="share-img" src="{% static 'homework/materials/icons/gh.png' %}">
+        </div>
+    </div>
+</footer>
+<!--footer end-->
 
-    <!--script-->
-    <script src="{% static 'homework/js/jquery-3.4.1.js'%}"></script>
-    <script src="{% static 'homework/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
-    <script src="{% static 'homework/js/account.js'%}"></script>
+<!--script-->
+<script src="{% static 'homework/js/jquery-3.4.1.js' %}"></script>
+<script src="{% static 'homework/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'homework/js/account.js' %}"></script>
 </body>
 
 </html>

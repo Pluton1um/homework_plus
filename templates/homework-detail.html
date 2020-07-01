@@ -21,15 +21,15 @@
             <!--column 1 start-->
             <td class="td-nav">
                 <ul class="nav nav-pills flex-column" id="navigation-bar">
-                    {% for x in y %}
+                    {% for hw in homework %}
                     <li class="nav-items">
-                        <a class="nav-link nav-a nav-a-active" data-toggle="collapse" data-target="#sub-nav-1">学生一</a>
+                        <a class="nav-link nav-a nav-a-active" data-toggle="collapse" data-target="#sub-nav-1">{{hw.student.name}}</a>
                         <!--second level nav start-->
                         <!-- <div class="collapse navbar-collapse" id="sub-nav-1"> -->
                         <ul class="nav nav-pills collapse" id="sub-nav-1" data-parent="#navigation-bar">
-                            {% for x in y %}
+                            {% for p in hw.photo %}
                             <li class="nav-item">
-                                <a class="nav-link sub-nav-a" data-toggle="pill" href="#student1-page1">第一张</a>
+                                <a class="nav-link sub-nav-a" data-toggle="pill" href="#student1-page1">{{p.photo}}</a>
                             </li>
                             {% endfor %}
                         </ul>
@@ -111,6 +111,8 @@
 
                         <!--td right panel start-->
                         <td class="sub-td-pane">
+                            <p style="margin-top: 20px;margin-left: 20px;">提交时间：{}</p>
+                            <textarea class="message">作业备注：{}</textarea>
                             <button class="button-draw btn btn-info" type="button">画笔工具</button>
                             <!-- <div class="button-color">
                                 <p>选择画笔颜色：</p>
@@ -118,7 +120,7 @@
                             </div> -->
                             <p style="margin-top: 20px;margin-left: 20px;">分数:</p>
                             <input class="point" type="text" placeholder="满分10分">
-                            <p style="margin-top: 20px;margin-left: 20px;">备注：</p>
+                            <p style="margin-top: 20px;margin-left: 20px;">批注：</p>
                             <textarea class="message"></textarea>
                             <button class="button-save btn btn-info" type="button">保 存</button>
                             <p class="img-url" style="display: none;">#</p>

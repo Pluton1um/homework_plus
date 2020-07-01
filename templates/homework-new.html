@@ -8,14 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>发布新的作业</title>
     <!--css-->
-    <link rel="shortcut icon" href="{% static 'homework/materials/icons/favicon.ico' %}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{% static 'homework/materials/icons/favicon.ico' %}" type="image/x-icon"/>
     <link rel="stylesheet" href="{% static 'homework/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'homework/css/forall.css' %}">
     <link rel="stylesheet" href="{% static 'homework/css/homework-new.css' %}">
 </head>
 
 <body class="container-fluid">
-
+<form class="school-form column-center" action="" method="post">
     <div class="row"></div>
     <table class="col-10 offset-1">
         <tr>
@@ -23,7 +23,7 @@
                 作业名称
             </td>
             <td class="table-content">
-                <input class="homework-title" type="text">
+                <input name="name" class="homework-title" type="text">
             </td>
         </tr>
         <tr>
@@ -40,7 +40,7 @@
                 截止日期
             </td>
             <td class="table-content">
-                <input class="homework-ddl" type="datetime">
+                <input name="end_time" class="homework-ddl" type="datetime">
             </td>
         </tr>
         <tr>
@@ -48,17 +48,18 @@
                 作业要求
             </td>
             <td class="table-content">
-                <textarea class="homework-demand"></textarea>
+                <textarea name="text" class="homework-demand"></textarea>
                 <!-- <input class="homework-demand" type="text"> -->
                 <!--这里可以是用 <textarea></textarea> -->
             </td>
         </tr>
     </table>
-
-    <!--script-->
-    <script src="{% static 'homework/js/jquery-3.4.1.js' %}"></script>
-    <script src="{% static 'homework/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'homework/js/  ' %}"></script>
+    <button type="submit" class="new-homework btn btn-info">确定</button>
+</form>
+<!--script-->
+<script src="{% static 'homework/js/jquery-3.4.1.js' %}"></script>
+<script src="{% static 'homework/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'homework/js/  ' %}"></script>
 </body>
 
 </html>
